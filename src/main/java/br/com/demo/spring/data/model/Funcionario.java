@@ -25,7 +25,8 @@ public class Funcionario {
     private LocalDate dataContratacao;
 
     @ManyToOne
-    @JoinColumn(name = "cargo_id", nullable = false)
+//    @JoinColumn(name = "cargo_id", nullable = false)
+    @JoinColumn(name = "cargo_id", nullable = true)
     private Cargo cargo;
 
     @Fetch(FetchMode.SELECT)
@@ -43,5 +44,9 @@ public class Funcionario {
     }
 
     public Funcionario() {
+    }
+
+    public Funcionario(String nome) {
+        this.nome = nome;
     }
 }

@@ -1,6 +1,7 @@
 package br.com.demo.spring.data.repository;
 
 import br.com.demo.spring.data.model.Funcionario;
+import br.com.demo.spring.data.model.FuncionarioProjection;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -16,7 +17,7 @@ public interface FuncionarioRepository extends CrudRepository<Funcionario, Integ
     //Derived Query Methods - queries criadas através de código Java
     // https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.query-creation
     List<Funcionario> findByNome(String nome);
-    List<Funcionario> findByNome(String nome, Pageable pageable);
+    //List<Funcionario> findByNome(String nome, Pageable pageable);
 
     //JPQL - queries criadas através de uma estrutura SQL, porém com os nomes das entidades Java
 
@@ -45,5 +46,8 @@ public interface FuncionarioRepository extends CrudRepository<Funcionario, Integ
 //    @Query(value = "SELECT * FROM funcionarios f WHERE f.data_contratacao >= :data", nativeQuery = true)
 //    List<Funcionario> buscaDataContratacaoMaior(LocalDate data);
 
+
+    @Query(value = "SELECT f.id, f.nome, f.salario FROM funcionarios f", nativeQuery = true)
+    List<FuncionarioProjection> findFuncionarioSalarioComProjecao();
 
 }
