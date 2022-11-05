@@ -26,4 +26,7 @@ public class Unidade {
         this.descricao = descricao;
         this.endereco = endereco;
     }
+
+    public Unidade() {
+    }
 }

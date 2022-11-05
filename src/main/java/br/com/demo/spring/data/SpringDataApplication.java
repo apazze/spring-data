@@ -34,7 +34,9 @@ public class SpringDataApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		Cargo Analista = cargoRepository.save(new Cargo("ANALISTA"));
 		Unidade Gravatai = unidadeRepository.save(new Unidade("MATRIZ", "GRAVATAI"));
-		//Funcionario Alisson = funcionarioRepository.save(new Funcionario("Alisson", "123456", 1000.05, LocalDate.now(), Analista, List.of(Gravatai)));
+		Funcionario Alisson = funcionarioRepository.save(new Funcionario("Alisson", "123456", 1000.05, LocalDate.now(), Analista, List.of(Gravatai)));
 
+		List<Funcionario> funcionarios = funcionarioRepository
+				.buscarNomeSalarioMaiorDataContratacao("Alisson", 1000d, LocalDate.now());
 	}
 }

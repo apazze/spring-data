@@ -41,4 +41,7 @@ public class Funcionario {
         this.cargo = cargo;
         this.unidades = unidades;
     }
+
+    public Funcionario() {
+    }
 }

@@ -25,4 +25,7 @@ public class Cargo {
     public Cargo(String descricao) {
         this.descricao = descricao;
     }
+
+    public Cargo() {
+    }
 }
