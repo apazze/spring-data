@@ -1,6 +1,7 @@
 package br.com.demo.spring.data.repository;
 
 import br.com.demo.spring.data.model.Funcionario;
+import br.com.demo.spring.data.model.FuncionarioProjecaoDTO;
 import br.com.demo.spring.data.model.FuncionarioProjection;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -49,5 +50,8 @@ public interface FuncionarioRepository extends CrudRepository<Funcionario, Integ
 
     @Query(value = "SELECT f.id, f.nome, f.salario FROM funcionarios f", nativeQuery = true)
     List<FuncionarioProjection> findFuncionarioSalarioComProjecao();
+
+    @Query(value = "SELECT f.id, f.nome, f.salario FROM funcionarios f", nativeQuery = true)
+    List<FuncionarioProjecaoDTO> findFuncionarioSalarioComProjecaoClasse();
 
 }

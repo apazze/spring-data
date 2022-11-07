@@ -2,6 +2,7 @@ package br.com.demo.spring.data;
 
 import br.com.demo.spring.data.model.Cargo;
 import br.com.demo.spring.data.model.Funcionario;
+import br.com.demo.spring.data.model.FuncionarioProjecaoDTO;
 import br.com.demo.spring.data.model.FuncionarioProjection;
 import br.com.demo.spring.data.repository.CargoRepository;
 import br.com.demo.spring.data.repository.FuncionarioRepository;
@@ -62,6 +63,10 @@ public class SpringDataApplication implements CommandLineRunner {
 		List<FuncionarioProjection> funcionarioProjections = funcionarioRepository.findFuncionarioSalarioComProjecao();
 
 
+
+		List<FuncionarioProjecaoDTO> funcionarioProjecaoDTOS = funcionarioRepository.findFuncionarioSalarioComProjecaoClasse();
+
+	// nao funcionou projeção com classe
 
 
 	}
